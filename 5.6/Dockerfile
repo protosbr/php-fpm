@@ -34,6 +34,13 @@ RUN docker-php-ext-configure gd \
     --with-png-dir=/usr/include/ \
     && docker-php-ext-install gd
 
+RUN curl -o ioncube.tar.gz http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz \
+    && echo "dacf7351cb750e999a59c8167d8057a8d2ca72d2391b74444db1b251a76c2fba  ioncube.tar.gz"|shasum -c \
+    && tar -xvvzf ioncube.tar.gz \
+    && mv ioncube/ioncube_loader_lin_5.6.so /usr/local/lib/php/extensions/* \
+    && rm -Rf ioncube.tar.gz ioncube \
+    && echo "zend_extension=ioncube_loader_lin_5.6.so" > /usr/local/etc/php/conf.d/00_docker-php-ext-ioncube_loader_lin_5.6.ini
+
 RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl
 RUN docker-php-ext-install imap
 RUN docker-php-ext-install intl
