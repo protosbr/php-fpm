@@ -1,0 +1,6 @@
+sudo: required
+services: docker
+script:
+  - docker build -t protosprojetos/php-fpm:7.2 .
+after_script:
+  - docker images
