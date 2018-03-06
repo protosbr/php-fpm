@@ -36,7 +36,6 @@ RUN apt-get update && apt-get upgrade -y \
     && yes '' | pecl install imagick && docker-php-ext-enable imagick \
     && docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
     && docker-php-ext-install imap \
-    && pecl install memcached && docker-php-ext-enable memcached \
     && docker-php-ext-configure intl  \
     && docker-php-ext-install intl \
     && docker-php-ext-configure opcache  \
