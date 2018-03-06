@@ -9,7 +9,7 @@ RUN apt-get update && apt-get upgrade -y \
     libkrb5-dev \
     libmagickwand-dev \
     libmcrypt-dev \
-    libpng12-dev \
+    libpng-dev \
     libpq-dev \
     libssl-dev \
     libssl-doc \
