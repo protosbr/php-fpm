@@ -35,7 +35,7 @@ RUN docker-php-ext-configure gd \
     && docker-php-ext-install gd
 
 RUN curl -o ioncube.tar.gz http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz \
-    && echo "dacf7351cb750e999a59c8167d8057a8d2ca72d2391b74444db1b251a76c2fba  ioncube.tar.gz"|shasum -c \
+    && echo "aeed0cfe0c7435338d5c155533bd8f4f176f6f1ccc000465d4c2414ba6bb718a  ioncube.tar.gz"|shasum -c \
     && tar -xvvzf ioncube.tar.gz \
     && mv ioncube/ioncube_loader_lin_5.6.so /usr/local/lib/php/extensions/* \
     && rm -Rf ioncube.tar.gz ioncube \
